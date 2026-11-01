@@ -1,7 +1,7 @@
 public class Buku {
-    String judul;
-    String pengarang;
-    int tahunTerbit;
+    private String judul;
+    private String pengarang;
+    private int tahunTerbit;
 
     public Buku(String judul, String pengarang, int tahunTerbit) {
         this.judul = judul;
@@ -13,5 +13,24 @@ public class Buku {
         System.out.println("Judul        : " + judul);
         System.out.println("Pengarang    : " + pengarang);
         System.out.println("Tahun Terbit : " + tahunTerbit);
+    }
+    public String getJudul() {
+        return judul;
+    }
+
+    public String getPengarang() {
+        return pengarang;
+    }
+
+    public int getTahunTerbit() {
+        return tahunTerbit;
+    }
+
+    public void setJudul(String judul) {
+        this.judul = judul;
+    }
+
+    public void setPengarang(String pengarang) {
+        this.pengarang = pengarang;
     }
 }

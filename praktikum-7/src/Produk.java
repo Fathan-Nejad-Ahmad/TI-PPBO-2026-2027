@@ -1,10 +1,10 @@
 import java.util.Locale;
 
 public class Produk {
-    String kodeProduk;
-    String namaProduk;
-    double harga;
-    int stok;
+    private String kodeProduk;
+    private String namaProduk;
+    private double harga;
+    private int stok;
 
     public Produk(String kodeProduk, String namaProduk, double harga, int stok) {
         this.kodeProduk = kodeProduk;
@@ -18,11 +18,13 @@ public class Produk {
     }
 
     public void kurangiStok(int jumlah) {
-        if (jumlah <= stok) {
-            stok -= jumlah;
-            System.out.println("Stok " + namaProduk + " berkurang " + jumlah + ". Sisa stok: " + stok);
-        } else {
+        if (jumlah <= 0) {
+            System.out.println("Jumlah kurangi stok harus lebih dari 0");
+        } else if (jumlah > stok) {
             System.out.println("Stok tidak mencukupi");
+        } else {
+            stok -= jumlah;
+            System.out.println("Stok berkurang. Stok sekarang: " + stok);
         }
     }
 
@@ -31,5 +33,37 @@ public class Produk {
         System.out.println("Nama Produk : " + namaProduk);
         System.out.println("Harga       : Rp" + String.format(Locale.of("id", "ID"), "%,.0f", harga));
         System.out.println("Stok        : " + stok);
+    }
+    public String getKodeProduk() {
+        return kodeProduk;
+    }
+
+    public String getNamaProduk() {
+        return namaProduk;
+    }
+
+    public double getHarga() {
+        return harga;
+    }
+
+    public int getStok() {
+        return stok;
+    }
+
+    public void setHarga(double harga) {
+        if (harga < 0) {
+            System.out.println("Harga tidak boleh negatif");
+        } else {
+            this.harga = harga;
+        }
+    }
+
+    public void tambahStok(int jumlah) {
+        if (jumlah <= 0) {
+            System.out.println("Jumlah tambah stok harus lebih dari 0");
+            return;
+        }
+        stok += jumlah;
+        System.out.println("Stok bertambah. Stok sekarang: " + stok);
     }
 }

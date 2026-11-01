@@ -9,8 +9,8 @@ public class Latihan4 {
 
         System.out.println("Buku yang terbit setelah tahun 2015:");
         for (Buku b : daftar) {
-            if (b.tahunTerbit > 2015) {
-                System.out.println("- " + b.judul + " (" + b.tahunTerbit + ")");
+            if (b.getTahunTerbit() > 2015) {
+                System.out.println("- " + b.getJudul() + " (" + b.getTahunTerbit() + ")");
             }
         }
     }

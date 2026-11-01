@@ -22,5 +22,16 @@ public class Mahasiswa {
     public boolean isCumlaude() {
         return ipk >= 3.5;
     }
+    public String getNama() {
+        return nama;
+    }
+
+    public String getNim() {
+        return nim;
+    }
+
+    public double getIpk() {
+        return ipk;
+    }
 }
 

@@ -14,4 +14,5 @@ public class Pegawai {
         System.out.println("NIP: " + nip);
         System.out.println("Gaji Pokok: " + gajiPokok);
     }
+
 }
